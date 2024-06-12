@@ -11,7 +11,7 @@
 
 ![alt text](image-6.png)
 
-### Internal CSS
+### Internal CSS(when single http request is needed)
 ![alt text](image-7.png)
 
 ### Inline CSS-(there will be no separation of concern)
@@ -39,17 +39,29 @@
 -------------------------------------------------
 - color wheel -0 to 255
 ------------------------------------------------
-- Before HSL (Hue, Saturation, and Lightness) were used.
-- To get more colors,now LCH stands for Lightness, Chroma, and Hue are used
+- Before HSL (Hue, Saturation, and Lightness) were used,as supported by many applications.
+- To get more colors,now LCH stands for Lightness, Chroma, and Hue are used(larger color gamette like srgb,dcpi);Rightnow srgb is suoorted by LCH
 -----------------------------------------------------------
 ## Text Styling
 ![alt text](image-11.png) 
 
-1. text transform-upper,lower
+1. text transform-upper,lower,capitalize
 2. text-align-->centre,bottom,top
 3.text decoration
-4.letter spacing
+4.letter spacing-to give posh looking
 5.line-height--->distance between the lines
+  when font size is smaller,line height should be more and vice versa
 
 ![alt text](image-12.png)
 
+--------------------------------------------------
+
+revert-undo the mistake 
+reset-delete the mistake
+hard-entire commit will be deleted 
+soft-deletes the commit but allows to edit particular commit
+----------------------------------------------
+
+1vh=1% of screen height
+1vw=1% of screen width
+width=1%of container width

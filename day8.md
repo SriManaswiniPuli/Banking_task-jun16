@@ -2,7 +2,7 @@
 
 ### behind
  - no of commits made in the main branch which are not in the existing branch
- - there is no need of merging in case of behind as commits are made in main branch,fast foraward takes place
+ - there is no need of merging in case of behind as commits are made in main branch,fast forward takes place
 
  ### ahead
  - no of commits made in sub branch which are not present in main branch
@@ -51,7 +51,7 @@
 1. Planning-proper plan (monthly once-customer,every 2 weeks-QA)
 2. Governance-access level of each branch
 3. Scheduling-maintained through sprints and agile process from pointg to point
-4. Automation-used in CI/CD ,reducing the human errors
+4. Automation-achieved through CI/CD ,reducing the human errors
 5. Contigency-refers to backup-we can rollback to older versions if any bug occurs and need to be solved immediately
 
 -------------------------------------------------
@@ -71,3 +71,10 @@ release management is paas
 
 ![alt text](image-4.png)
 ![alt text](image-5.png)
+
+## Use of Uglification
+
+- dowloading can be easy as the files become smaller.
+- it removes some of the code which is not useful
+- until netlify is called CI
+- from netlify to customer,it is called CD
