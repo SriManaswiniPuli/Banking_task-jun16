@@ -147,6 +147,54 @@ is first checked in RAM,if not present then it is checked in Harddisk.Below imag
 
 - Insertion,updation,deletion anamolies occurs
 - Non-key attributes are the ones which are not either primary or composite
-- Each non-key attribute should be depend on the entire primary key
+- Each non-key attribute should be depend on the "entire primary key".
+
+## 3NF
+
+![alt text](<Screenshot (25).copy.png>)
+- "Non key attribute" should depend only on the primary key
+
+## BCNF
+- "Every attribute" in a table should depend on the key,the whole key and nothing but the key
+- Pimary key should depend on itself
+
+## JOINS
+- safety purpose
+- to view results from the data
+
+![alt text](<Screenshot (27).png>) 
+
+--------------------------------------------
+## DML COMMANDS 
+- select
+- delete
+- update
+- insert
+- truncate
+
+## DDL COMMANDS
+- create
+- add
+- rename 
+
+## Datatypes
+- integer -for whole numbbes
+- float-3 decimal points(precision values)
+- double-6
+- real-12
+- character-to store few character
+- varchar(to store sentences-100s or 1000s)
+- text-paragraphs
+- date-only date
+- date and time-both date,times
+
+
+
+
+
+
+
+
+
 
 

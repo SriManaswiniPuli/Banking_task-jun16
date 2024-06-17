@@ -5,3 +5,13 @@
 - #shortcut
    cntrl+shift+p;emmet opens,enter wrap
 - https://mycolor.space/-website to combine 2 colors
+- anchor is an inline element
+-  paragraph is a block element,body is the container of para,so it occupies the width of the body,even if the content is small,it occupies entire width
+    ```js
+    <p>First</p><p>second</p>
+'''
+      creates First in 1 line
+      creates second in other new line
+- anchor beingan inline element ocuupies content width
+- span is also an inline element
+- https://bennettfeely.com/clippy/(css clip path maker)
