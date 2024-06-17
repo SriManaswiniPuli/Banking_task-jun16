@@ -235,13 +235,17 @@ where account_type='current';
 --------------------------------
 9. Write a SQL query to calculate the interest accrued on savings accounts based on a given interest rate.
 ```sql
-select balance * (interest_rate) AS interest_accrued from interestrates INNER JOIN Accounts on interestrates.interest_rate_id=accounts.customer_id
-where acctype='savings';
+select balance * (interest_rate) AS interest_accrued from Interestrates 
+INNER JOIN AccountsNEW1111 on Interestrates.interest_rate_id=AccountsNEW1111.customer_id
+where account_type='savings';
 ```
+![alt text](image-67.png)
+
 
 10. Write a SQL query to find the average account balance for all customers.
 ```sql
-select avg(balance) as AVGBALANCE from AccountsNEW1;
+select avg(balance) as
+ AVGBALANCE from AccountsNEW1;
 ```
 ![alt text](image-59.png)
 ![alt text](image-60.png)
@@ -249,26 +253,13 @@ select avg(balance) as AVGBALANCE from AccountsNEW1;
 ----------------------------------
 11. Write a SQL query to calculate the average daily balance for each account over a specified period. 
 ```sql
-SELECT
-    account_id,
-    AVG(daily_balance) AS average_daily_balance
-FROM
-    (
-        SELECT
-            account_id,
-            transaction_date,
-            SUM(amount) AS daily_balance
-        FROM
-            Transactions
-        WHERE
-            transaction_date BETWEEN 'start_date' AND 'end_date' -- Specify your desired period
-        GROUP BY
-            account_id,
-            transaction_date
-    ) AS daily_balances
-GROUP BY
-    account_id;
+SELECT AVG(balance) AS daily_balance FROM accounts
+INNER JOIN Transactions on Accounts.accid=Transactions.account_id
+WHERE Transaction_date BETWEEN '2024-06-10' AND '2024-06-20'
+GROUP BY account_id;
 ```
+![alt text](<MicrosoftTeams-image (6).png>) 
+
 
 
 12. Identify accounts with the highest number of transactions ordered by descending order.
@@ -283,25 +274,11 @@ ORDER BY transaction_count DESC;
 --------------------------------------------
 13. List customers with high aggregate account balances, along with their account types.
 ```sql
-SELECT
-    C.customer_id,
-    C.first_name,
-    C.last_name,
-    A.account_type,
-    SUM(A.balance) AS total_balance
-FROM
-    Customers C
-JOIN
-    Accounts A ON C.customer_id = A.customer_id
-GROUP BY
-    C.customer_id,
-    C.first_name,
-    C.last_name,
-    A.account_type
-ORDER BY
-    total_balance DESC;
-
+select customer_id,sum(balance) as maximum , acctype  from Accounts INNER JOIN Transactions on Accounts.accid=Transactions.account_id
+GROUP BY customer_id , acctype
+order by maximum desc;
 ```
+
 14. Identify and list duplicate transactions based on transaction amount, date, and account.
 
 ```sql
@@ -324,4 +301,3 @@ group by account_type;
 ![alt text](image-66.png)
 
 
-9,11,13

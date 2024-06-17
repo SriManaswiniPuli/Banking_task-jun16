@@ -261,11 +261,13 @@ select sum(Years_employed) from Employees
 where role="Engineer";
 ```
 ![alt text](image-37.png)
----
+
+--------------------------------------------------
 
 Exercise 12 — Tasks
-1.
-Find the number of movies each director has directed ```sql
+
+1.Find the number of movies each director has directed
+ ```sql
 SELECT Director,count(Title) FROM Movies
 group by director;
 ```
@@ -276,3 +278,102 @@ inner join boxoffice
 on movies.id=boxoffice.movie_id
 group by director;
 ```
+![alt text](image-38.png)
+--------------------------------------------
+
+Exercise 13 — Tasks
+1.Add the studio's new production, Toy Story 4 to the list of movies (you can use any director) 
+```sql
+insert into Movies
+(title,director,year,length_minutes)
+VALUES("Toy Story 4","Manu",1997,90);
+```
+2.Toy Story 4 has been released to critical acclaim! It had a rating of 8.7, and made 340 million domestically and 270 million internationally. Add the record to the BoxOffice table.
+```sql
+insert into BoxOffice
+(movie_id,rating,domestic_sales,international_sales)
+values(15,8.7,340000000,270000000);
+```
+![alt text](image-39.png)
+----------------------------------------------
+
+Exercise 14 — Tasks
+1.The director for A Bug's Life is incorrect, it was actually directed by John Lasseter 
+```sql
+update movies
+set director="John Lasseter"
+where title="A Bug's Life";
+```
+2.The year that Toy Story 2 was released is incorrect, it was actually released in 1999
+```sql
+update movies
+set year=1999
+where title="Toy Story 2";
+```
+3.Both the title and director for Toy Story 8 is incorrect! The title should be "Toy Story 3" and it was directed by Lee Unkrich
+```sql
+update movies
+set title="Toy Story 3",director="Lee Unkrich"
+where title="Toy Story 8";
+```
+
+![alt text](image-40.png) 
+
+-----------------------------------------------
+
+Exercise 15 — Tasks
+1.This database is getting too big, lets remove all movies that were released before 2005. 
+```sql
+delete from movies
+where year<2005;
+```
+2.Andrew Stanton has also left the studio, so please remove all movies directed by him.
+```sql
+delete from movies
+where director="Andrew Stanton";
+```
+![alt text](image-41.png) 
+
+---------------------------------------
+Exercise 16 — Tasks
+Create a new table named Database with the following columns:
+– Name A string (text) describing the name of the database
+– Version A number (floating point) of the latest version of this database
+– Download_count An integer count of the number of times this database was downloaded
+This table has no constraints. 
+```sql
+create table database
+(Name text,
+ Version integer,
+ Download_count integer
+ );
+```
+![alt text](image-42.png)
+
+-----------------------------------------
+
+Exercise 17 — Tasks
+1.Add a column named Aspect_ratio with a FLOAT data type to store the aspect-ratio each movie was released in. 
+```sql
+alter table movies
+add Aspect_ratio float;
+```
+2.Add another column named Language with a TEXT data type to store the language that the movie was released in. Ensure that the default for this language is English.
+```sql
+alter table movies
+add Language text
+Default English;
+```
+
+![alt text](image-43.png)
+-------------------------------------------------------
+Exercise 18 — Tasks
+1.We've sadly reached the end of our lessons, lets clean up by removing the Movies table 
+```sql
+drop table movies;
+```
+2.And drop the BoxOffice table as well
+```sql
+drop table boxoffice;
+```
+---------------------------------------------------------

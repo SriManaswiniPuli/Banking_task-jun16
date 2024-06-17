@@ -105,6 +105,7 @@ is first checked in RAM,if not present then it is checked in Harddisk.Below imag
 
 - redis can be used for faster retrieval as data is stored in RAM.
 ------------------------------------------------
+
 # JUN 11
 
 ## Y we need joins?
@@ -187,6 +188,52 @@ is first checked in RAM,if not present then it is checked in Harddisk.Below imag
 - text-paragraphs
 - date-only date
 - date and time-both date,times
+- blob-to store binary data which includes images,videos  
+-----------------------------------------------------------
+
+- images are stored as (paths of image files in file systems) in databases
+
+---------------------------------------------------
+
+## Foreign key constrain
+ 
+- first we should delete the foriegn key table and later we should remove the orginal table.
+ 
+- if we try to delete the primary key table  directly then the info in other table becomes ghost data.
+
+- ![alt text](<MicrosoftTeams-image (4).png>)
+----------------------------------------
+## Data types
+
+![alt text](<MicrosoftTeams-image (4)-1.png>)
+![alt text](<MicrosoftTeams-image (4)-2.png>) 
+
+- nvarchar is easy to calculate,supports multiple languages 
+
+- befor varchar(max) was used,now text is used.
+
+- Boolean stores data as bits either 0 or 1
+- ![alt text](<Screenshot (30).png>)  
+
+----------------------------------------------
+
+# FUNCTIONS
+1.Aggregrate Functions
+2.String Functions
+3.Mathematical Functions
+
+
+REFER SSMS
+
+- Subqueries are good at readability more than joins
+- Joins have more perfomance than subqueries
+
+
+
+
+
+
+
 
 
 
